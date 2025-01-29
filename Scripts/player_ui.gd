@@ -31,7 +31,7 @@ func _ready() -> void:
 	#print(infoLord.pokemon[pokemonSprite.frame]["HP"])
 	
 	#maxHp = (((((infoLord.pokemon[str(pokemonSprite.frame)]["HP"] + 15) * 2) + (pow(252, 1) / 4) * level) * 1) / 100) + level + 10
-	maxHp = ((((((infoLord.pokemon[str(pokemonSprite.frame)]["HP"]) + 15) * 2) + (pow(252, 1/2) / 4)) * level) / 100) + level + 10
+	maxHp = ((((((infoLord.pokemon[str(pokemonSprite.frame)]["HP"]) + 15) * 2) + (pow(252, 1) / 4)) * level) / 100) + level + 10
 	
 	levelText.set_text(str(level))
 	maxHealthText.set_text(str(maxHp))
