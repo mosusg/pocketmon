@@ -1,8 +1,8 @@
-[gd_scene load_steps=337 format=3 uid="uid://dao1vlcb3ohwp"]
+[gd_scene load_steps=341 format=3 uid="uid://dao1vlcb3ohwp"]
 
 [ext_resource type="Script" path="res://Scripts/globalScript.gd" id="1_2lohr"]
-[ext_resource type="Texture2D" uid="uid://bjncwymmoxktj" path="res://Assets/images/ui/placeholder fight box.png" id="2_8rayd"]
 [ext_resource type="Texture2D" uid="uid://d113q0st3apq7" path="res://Assets/images/ui/healthBar.png" id="2_miuci"]
+[ext_resource type="Texture2D" uid="uid://bot6ynlqrrlai" path="res://Assets/images/ui/place holder fight box move.png" id="2_n2gun"]
 [ext_resource type="Texture2D" uid="uid://gj7n835k03ho" path="res://Assets/images/ui/bottomFrameThing.png" id="3_4rxd3"]
 [ext_resource type="Script" path="res://Scripts/enemy_ui.gd" id="3_lwu7f"]
 [ext_resource type="Texture2D" uid="uid://bux5e2t3ybg45" path="res://Assets/images/pokemonfront.png" id="4_0fnam"]
@@ -13,8 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://djcafgtb48fmj" path="res://Assets/images/ui/fightBoxEmpty.png" id="8_qwrik"]
 [ext_resource type="Script" path="res://Scripts/player_ui.gd" id="8_su0bw"]
 [ext_resource type="Texture2D" uid="uid://cp7cfjwyuad3m" path="res://Assets/images/ui/playerBottomFrameThing.png" id="9_4q2y1"]
-[ext_resource type="Texture2D" uid="uid://b3bjda40782h7" path="res://Assets/images/ui/actionBoxFightPokemon.png" id="14_xhhuw"]
 [ext_resource type="Texture2D" uid="uid://bet03u78ik6uu" path="res://Assets/images/ui/selector.png" id="15_nd7ub"]
+[ext_resource type="Texture2D" uid="uid://dfskqfgv28q7n" path="res://Assets/images/ui/moveBox.png" id="15_xc3dt"]
+[ext_resource type="Texture2D" uid="uid://dnnkdgijab054" path="res://Assets/images/ui/typeBox.png" id="16_b6jfb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cufhy"]
 atlas = ExtResource("4_0fnam")
@@ -1137,6 +1138,14 @@ animations = [{
 "speed": 0.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0i68"]
+bg_color = Color(0, 0.972549, 0, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhsvv"]
+bg_color = Color(0, 0.972549, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_865py"]
 line_spacing = 1.0
 font = ExtResource("6_twvcr")
@@ -2234,11 +2243,6 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0i68"]
-bg_color = Color(0, 0.972549, 0, 1)
-border_color = Color(0.8, 0.8, 0.8, 0)
-anti_aliasing = false
-
 [sub_resource type="LabelSettings" id="LabelSettings_kfc05"]
 font_size = 24
 font_color = Color(0, 0, 0, 1)
@@ -2253,6 +2257,14 @@ font = ExtResource("6_twvcr")
 font_size = 8
 font_color = Color(0, 0, 0, 1)
 shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_tjrpe"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0pm8j"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
 
@@ -2270,7 +2282,7 @@ metadata/_edit_lock_ = true
 visible = false
 modulate = Color(1, 1, 1, 0.317647)
 position = Vector2(80, 72)
-texture = ExtResource("2_8rayd")
+texture = ExtResource("2_n2gun")
 metadata/_edit_lock_ = true
 
 [node name="EnemyUI" type="Node2D" parent="."]
@@ -2278,8 +2290,9 @@ position = Vector2(56, 20)
 script = ExtResource("3_lwu7f")
 
 [node name="pokemon" type="AnimatedSprite2D" parent="EnemyUI"]
-position = Vector2(68, 5)
+position = Vector2(68, 5.5)
 sprite_frames = SubResource("SpriteFrames_70ogl")
+frame = 132
 
 [node name="ColorRect" type="ColorRect" parent="EnemyUI/pokemon"]
 offset_left = -29.0
@@ -2293,6 +2306,19 @@ color = Color(0.972549, 0.972549, 0.972549, 1)
 position = Vector2(-7, 2)
 texture = ExtResource("3_4rxd3")
 offset = Vector2(0.5, 0.5)
+
+[node name="healthBarREAL" type="ProgressBar" parent="EnemyUI/BottomFrameThing"]
+offset_left = -17.0
+offset_top = -3.0
+offset_right = 31.0
+offset_bottom = 20.0
+scale = Vector2(1, 0.105)
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_v0i68")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nhsvv")
+step = 1.0
+value = 100.0
+show_percentage = false
 
 [node name="HealthBar" type="Sprite2D" parent="EnemyUI/BottomFrameThing"]
 position = Vector2(7, -2)
@@ -2334,13 +2360,14 @@ script = ExtResource("8_su0bw")
 position = Vector2(-69, 39)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kp8jq")
+frame = 132
 
 [node name="BottomFrameThing" type="Sprite2D" parent="PlayerUI"]
 position = Vector2(1, 52)
 texture = ExtResource("9_4q2y1")
 offset = Vector2(0.5, 0.5)
 
-[node name="ProgressBar" type="ProgressBar" parent="PlayerUI/BottomFrameThing"]
+[node name="healthBarREAL" type="ProgressBar" parent="PlayerUI/BottomFrameThing"]
 offset_left = -14.0
 offset_top = -7.0
 offset_right = 34.0
@@ -2348,8 +2375,9 @@ offset_bottom = 16.0
 scale = Vector2(1, 0.105)
 size_flags_horizontal = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_v0i68")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nhsvv")
 step = 1.0
-fill_mode = 1
+value = 100.0
 show_percentage = false
 
 [node name="HealthBar" type="Sprite2D" parent="PlayerUI/BottomFrameThing"]
@@ -2414,14 +2442,47 @@ text = "BULBASAUR"
 label_settings = SubResource("LabelSettings_865py")
 vertical_alignment = 1
 
+[node name="Selector" type="Sprite2D" parent="PlayerUI"]
+z_index = 2
+position = Vector2(-33, 86)
+texture = ExtResource("15_nd7ub")
+
 [node name="FightBoxEmpty" type="Sprite2D" parent="."]
 position = Vector2(80, 119)
 texture = ExtResource("8_qwrik")
+metadata/_edit_lock_ = true
 
 [node name="ActionBoxFightPokemon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(112, 120)
-texture = ExtResource("14_xhhuw")
+texture = ExtResource("15_xc3dt")
+offset = Vector2(-16.5, 0)
 
-[node name="Selector" type="Sprite2D" parent="."]
-position = Vector2(76, 116)
-texture = ExtResource("15_nd7ub")
+[node name="TypeBox" type="Sprite2D" parent="ActionBoxFightPokemon"]
+position = Vector2(-68, -36)
+texture = ExtResource("16_b6jfb")
+
+[node name="type" type="Label" parent="ActionBoxFightPokemon/TypeBox"]
+offset_left = -28.0
+offset_top = -5.0
+offset_right = 142.0
+offset_bottom = 22.0
+scale = Vector2(0.333, 0.333)
+text = "NORMAL"
+label_settings = SubResource("LabelSettings_tjrpe")
+
+[node name="maxPP" type="Label" parent="ActionBoxFightPokemon/TypeBox/type"]
+offset_left = 144.0
+offset_top = 24.0
+offset_right = 193.0
+offset_bottom = 51.0
+text = "24"
+label_settings = SubResource("LabelSettings_0pm8j")
+
+[node name="curPP" type="Label" parent="ActionBoxFightPokemon/TypeBox/type"]
+offset_left = 75.0751
+offset_top = 24.024
+offset_right = 124.075
+offset_bottom = 51.024
+text = "24"
+label_settings = SubResource("LabelSettings_0pm8j")

@@ -1,9 +1,9 @@
+Label
 ProgressBar
 Control
 CanvasLayer
 TextureProgressBar
 ColorRect
 Node2D
-Label
 AnimatedSprite2D
 Camera2D
