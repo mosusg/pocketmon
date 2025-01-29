@@ -1,3 +1,3 @@
 res://Scenes/mainTest.tscn
 res://Scripts/player_ui.gd
-res://Scripts/enemy_ui.gd
+res://Scripts/globalScript.gd

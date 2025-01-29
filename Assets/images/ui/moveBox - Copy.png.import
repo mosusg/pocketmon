@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://66weifoiadu6"
-path="res://.godot/imported/moveSelectBox.png-5ce75925de559031da3024e199b0d122.ctex"
+uid="uid://baquy4htrauon"
+path="res://.godot/imported/moveBox - Copy.png-d82df3a139512122ed1f550696fd077f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/ui/moveSelectBox.png"
-dest_files=["res://.godot/imported/moveSelectBox.png-5ce75925de559031da3024e199b0d122.ctex"]
+source_file="res://Assets/images/ui/moveBox - Copy.png"
+dest_files=["res://.godot/imported/moveBox - Copy.png-d82df3a139512122ed1f550696fd077f.ctex"]
 
 [params]
 

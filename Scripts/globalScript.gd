@@ -1,5 +1,51 @@
 extends Node
 
+var moves = {
+	"ABSORB" : {
+		"NAME" : "ABSORB",
+		"TYPE" : "GRASS",
+		"CATEGORY" : "SPECIAL",
+		"POWER" : 20,
+		"ACCURACY" : 100,
+		"PP" : 25
+	},
+	"SLEEP POWDER" : {
+		"NAME" : "SLEEP POWDER",
+		"TYPE" : "GRASS",
+		"CATEGORY" : "STATUS",
+		"POWER" : 0,
+		"ACCURACY" : 75,
+		"PP" : 15
+	},
+	"RAZOR LEAF" : {
+		"NAME" : "RAZOR LEAF",
+		"TYPE" : "GRASS",
+		"CATEGORY" : "PHYSICAL",
+		"POWER" : 55,
+		"ACCURACY" : 95,
+		"PP" : 25,
+		"CRIT" : 8
+	},
+	"BODY SLAM" : {
+		"NAME" : "BODY SLAM",
+		"TYPE" : "NORMAL",
+		"CATEGORY" : "PHYSICAL",
+		"POWER" : 85,
+		"ACCURACY" : 100,
+		"PP" : 15,
+		"PARA" : 30
+	},
+	"SWORDS DANCE" : {
+		"NAME" : "SWORDS DANCE",
+		"TYPE" : "NORMAL",
+		"CATEGORY" : "STATUS",
+		"POWER" : 0,
+		"ACCURACY" : 100,
+		"PP" : 20,
+		"STAT": 2
+	},
+}
+
 var pokemon = {
 	"0" : {
 		"name" : "BULBASAUR",
@@ -10,7 +56,13 @@ var pokemon = {
 		"DEFENSE" : 49,
 		"SPECIAL" : 65,
 		"SPEED" : 45,
-		"TIER": "LOW"
+		"TIER": "LOW",
+		"MOVESETONE" : {
+			"ONE" : moves["RAZOR LEAF"],
+			"TWO" : moves["SLEEP POWDER"],
+			"THREE" : moves["BODY SLAM"],
+			"FOUR" : moves["SWORDS DANCE"]
+			}
 		},
 	"1" : {
 		"name" : "IVYSAUR", 

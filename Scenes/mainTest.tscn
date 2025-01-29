@@ -1,4 +1,4 @@
-[gd_scene load_steps=341 format=3 uid="uid://dao1vlcb3ohwp"]
+[gd_scene load_steps=342 format=3 uid="uid://dao1vlcb3ohwp"]
 
 [ext_resource type="Script" path="res://Scripts/globalScript.gd" id="1_2lohr"]
 [ext_resource type="Texture2D" uid="uid://d113q0st3apq7" path="res://Assets/images/ui/healthBar.png" id="2_miuci"]
@@ -2258,6 +2258,10 @@ font_size = 8
 font_color = Color(0, 0, 0, 1)
 shadow_size = 0
 
+[sub_resource type="LabelSettings" id="LabelSettings_mg033"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_tjrpe"]
 font_size = 24
 font_color = Color(0, 0, 0, 1)
@@ -2444,7 +2448,7 @@ vertical_alignment = 1
 
 [node name="Selector" type="Sprite2D" parent="PlayerUI"]
 z_index = 2
-position = Vector2(-33, 86)
+position = Vector2(-65, 102)
 texture = ExtResource("15_nd7ub")
 
 [node name="FightBoxEmpty" type="Sprite2D" parent="."]
@@ -2457,6 +2461,44 @@ unique_name_in_owner = true
 position = Vector2(112, 120)
 texture = ExtResource("15_xc3dt")
 offset = Vector2(-16.5, 0)
+metadata/_edit_lock_ = true
+
+[node name="moves" type="Node2D" parent="ActionBoxFightPokemon"]
+
+[node name="move1" type="Label" parent="ActionBoxFightPokemon/moves"]
+offset_left = -64.0
+offset_top = -16.0
+offset_right = 224.0
+offset_bottom = 11.0
+scale = Vector2(0.333, 0.333)
+text = "ABSORB"
+label_settings = SubResource("LabelSettings_mg033")
+
+[node name="move2" type="Label" parent="ActionBoxFightPokemon/moves"]
+offset_left = -64.0
+offset_top = -8.0
+offset_right = 224.0
+offset_bottom = 19.0
+scale = Vector2(0.333, 0.333)
+text = "TACKLE"
+label_settings = SubResource("LabelSettings_mg033")
+
+[node name="move3" type="Label" parent="ActionBoxFightPokemon/moves"]
+offset_left = -64.0
+offset_right = 224.0
+offset_bottom = 27.0
+scale = Vector2(0.333, 0.333)
+text = "BODY SLAM"
+label_settings = SubResource("LabelSettings_mg033")
+
+[node name="move4" type="Label" parent="ActionBoxFightPokemon/moves"]
+offset_left = -64.0
+offset_top = 8.0
+offset_right = 224.0
+offset_bottom = 35.0
+scale = Vector2(0.333, 0.333)
+text = "DIDDY BLAST"
+label_settings = SubResource("LabelSettings_mg033")
 
 [node name="TypeBox" type="Sprite2D" parent="ActionBoxFightPokemon"]
 position = Vector2(-68, -36)
@@ -2472,6 +2514,7 @@ text = "NORMAL"
 label_settings = SubResource("LabelSettings_tjrpe")
 
 [node name="maxPP" type="Label" parent="ActionBoxFightPokemon/TypeBox/type"]
+layout_mode = 0
 offset_left = 144.0
 offset_top = 24.0
 offset_right = 193.0
@@ -2480,6 +2523,7 @@ text = "24"
 label_settings = SubResource("LabelSettings_0pm8j")
 
 [node name="curPP" type="Label" parent="ActionBoxFightPokemon/TypeBox/type"]
+layout_mode = 0
 offset_left = 75.0751
 offset_top = 24.024
 offset_right = 124.075
