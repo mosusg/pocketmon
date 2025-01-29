@@ -2280,7 +2280,7 @@ offset_left = -29.0
 offset_top = -18.0
 offset_right = -28.0
 offset_bottom = 4.0
-color = Color(0.972549, 0.972549, 0.972549, 1)
+color = Color(0.972549, 0.0941176, 0.101961, 1)
 
 [node name="BottomFrameThing" type="Sprite2D" parent="EnemyUI"]
 position = Vector2(-7, 2)
