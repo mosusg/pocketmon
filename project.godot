@@ -15,8 +15,26 @@ run/main_scene="res://Scenes/mainTest.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Scripts/globalScript.gd"
+
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=720
+window/size/viewport_width=160
+window/size/viewport_height=144
 window/size/resizable=false
+window/size/window_width_override=800
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom_font="res://Assets/fonts/PKMN RBYGSC.ttf"
+theme/default_font_antialiasing=0
+theme/default_font_hinting=0
+theme/default_font_subpixel_positioning=0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
