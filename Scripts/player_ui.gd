@@ -10,22 +10,8 @@ var maxHp : int
 var curHp : int
 var level = randi_range(60, 84)
 
-var monPicked = 0
-var ACCEPTABLECHOICES = randi_range(0, 4)
-
 func _ready() -> void:
-	if ACCEPTABLECHOICES == 0:
-		monPicked = 0
-	elif ACCEPTABLECHOICES == 1:
-		monPicked = 3
-	elif ACCEPTABLECHOICES == 2:
-		monPicked = 24
-	elif ACCEPTABLECHOICES == 3:
-		monPicked = 111
-	else:
-		monPicked = 133
-		
-	pokemonSprite.frame = monPicked
+	pokemonSprite.frame = randi_range(0, 5)
 	nameText.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["name"])
 	
 	#print(infoLord.pokemon[pokemonSprite.frame]["HP"])

@@ -9,10 +9,31 @@ var pokemon = {
 		"ATTACK" : 49,
 		"DEFENSE" : 49,
 		"SPECIAL" : 65,
-		"SPEED" : 45
+		"SPEED" : 45,
+		"TIER": "LOW"
 		},
-	"1" : {"name" : "IVYSAUR", "type1" : "GRASS", "type2" : "POISON"},
-	"2" : {"name" : "VENUSAUR", "type1" : "GRASS", "type2" : "POISON"},
+	"1" : {
+		"name" : "IVYSAUR", 
+		"type1" : "GRASS", 
+		"type2" : "POISON",
+		"HP" : 60,
+		"ATTACK" : 62,
+		"DEFENSE" : 63,
+		"SPECIAL" : 80,
+		"SPEED" : 60,
+		"TIER": "LOWMID"
+		},
+	"2" : {
+		"name" : "VENUSAUR", 
+		"type1" : "GRASS", 
+		"type2" : "POISON",
+		"HP" : 80,
+		"ATTACK" : 82,
+		"DEFENSE" : 83,
+		"SPECIAL" : 100,
+		"SPEED" : 80,
+		"TIER": "MID"
+		},
 	"3" : {
 		"name" : "CHARMANDER", 
 		"type1" : "FIRE", 
@@ -21,10 +42,31 @@ var pokemon = {
 		"ATTACK" : 52,
 		"DEFENSE" : 43,
 		"SPECIAL" : 50,
-		"SPEED" : 65
+		"SPEED" : 65,
+		"TIER": "LOW"
 		},
-	"4" : {"name" : "CHARMELEON", "type1" : "FIRE", "type2" : "NULL"},
-	"5" : {"name" : "CHARIZARD", "type1" : "FIRE", "type2" : "FLYING"},
+	"4" : {
+		"name" : "CHARMELEON", 
+		"type1" : "FIRE", 
+		"type2" : "NULL",
+		"HP" : 58,
+		"ATTACK" : 64,
+		"DEFENSE" : 58,
+		"SPECIAL" : 65,
+		"SPEED" : 80,
+		"TIER": "LOWMID"
+		},
+	"5" : {
+		"name" : "CHARIZARD", 
+		"type1" : "FIRE", 
+		"type2" : "FLYING",
+		"HP" : 78,
+		"ATTACK" : 84,
+		"DEFENSE" : 78,
+		"SPECIAL" : 85,
+		"SPEED" : 100,
+		"TIER": "MID"
+		},
 	"6" : {"name" : "SQUIRTLE", "type1" : "WATER", "type2" : "NULL"},
 	"7" : {"name" : "WARTORTLE", "type1" : "WATER", "type2" : "NULL"},
 	"8" : {"name" : "BLASTOISE", "type1" : "WATER", "type2" : "NULL"},
@@ -51,7 +93,8 @@ var pokemon = {
 		"ATTACK" : 55,
 		"DEFENSE" : 30,
 		"SPECIAL" : 50,
-		"SPEED" : 90
+		"SPEED" : 90,
+		"TIER": "LOW"
 		},
 	"25" : {"name" : "RAICHU", "type1" : "ELECTRIC", "type2" : "NULL"},
 	"26" : {"name" : "SANDSHREW", "type1" : "GROUND", "type2" : "NULL"},
@@ -147,7 +190,8 @@ var pokemon = {
 		"ATTACK" : 130,
 		"DEFENSE" : 120,
 		"SPECIAL" : 45,
-		"SPEED" : 40
+		"SPEED" : 40,
+		"TIER": "HIGH"
 		},
 	"112" : {"name" : "CHANSEY", "type1" : "NORMAL", "type2" : "NULL"},
 	"113" : {"name" : "TANGELA", "type1" : "GRASS", "type2" : "NULL"},
@@ -178,7 +222,8 @@ var pokemon = {
 		"ATTACK" : 65,
 		"DEFENSE" : 60,
 		"SPECIAL" : 110,
-		"SPEED" : 65
+		"SPEED" : 65,
+		"TIER": "MID"
 		},
 	"134" : {"name" : "JOLTEON", "type1" : "ELECTRIC", "type2" : "NULL"},
 	"135" : {"name" : "FLAREON", "type1" : "NORMAL", "type2" : "NULL"},
