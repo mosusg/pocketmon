@@ -2273,13 +2273,13 @@ script = ExtResource("3_lwu7f")
 [node name="pokemon" type="AnimatedSprite2D" parent="EnemyUI"]
 position = Vector2(68, 5)
 sprite_frames = SubResource("SpriteFrames_70ogl")
-frame = 142
 
 [node name="ColorRect" type="ColorRect" parent="EnemyUI/pokemon"]
 offset_left = -29.0
-offset_top = -18.0
+offset_top = -23.0
 offset_right = -28.0
-offset_bottom = 4.0
+offset_bottom = 27.0
+scale = Vector2(0.63, 1)
 color = Color(0.972549, 0.972549, 0.972549, 1)
 
 [node name="BottomFrameThing" type="Sprite2D" parent="EnemyUI"]
