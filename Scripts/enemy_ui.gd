@@ -11,13 +11,10 @@ var maxHp : int
 var curHp : int
 var level = randi_range(60, 84)
 
-
-
 func _ready() -> void:
 	initializePokemon()
 	
 	healthBar.value = float(curHp)/float(maxHp) * 100
-	print(healthBar.value)
 	levelText.set_text(str(level))
 
 func initializePokemon():

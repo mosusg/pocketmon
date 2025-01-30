@@ -1,6 +1,14 @@
 extends Node
 
 var moves = {
+	"DIDDLER BLAST" : {
+		"NAME" : "DIDDLER BLAST",
+		"TYPE" : "DIDDY",
+		"CATEGORY" : "SPECIAL",
+		"POWER" : 200,
+		"ACCURACY" : 100,
+		"PP" : 5
+	},
 	"ABSORB" : {
 		"NAME" : "ABSORB",
 		"TYPE" : "GRASS",
@@ -58,10 +66,10 @@ var pokemon = {
 		"SPEED" : 45,
 		"TIER": "LOW",
 		"MOVESETONE" : {
-			"ONE" : moves["RAZOR LEAF"],
-			"TWO" : moves["SLEEP POWDER"],
-			"THREE" : moves["BODY SLAM"],
-			"FOUR" : moves["SWORDS DANCE"]
+			"1" : moves["RAZOR LEAF"],
+			"2" : moves["SLEEP POWDER"],
+			"3" : moves["BODY SLAM"],
+			"4" : moves["DIDDLER BLAST"]
 			}
 		},
 	"1" : {

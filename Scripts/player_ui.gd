@@ -6,12 +6,13 @@ extends Node2D
 @onready var curHealthText = $BottomFrameThing/HealthBar/healthCount
 @onready var nameText = $BottomFrameThing/name
 @onready var healthBar = $BottomFrameThing/healthBarREAL
-@onready var cursor = $Selector
+@onready var cursor = $"../../Selector"
+@onready var uiCoolDown = $uiTimer
 @onready var actionBox = %ActionBoxFightPokemon
 @onready var typeBox = %ActionBoxFightPokemon/TypeBox
 @onready var moveTypeLabel = %ActionBoxFightPokemon/TypeBox/type
-@onready var moveMaxPP = %ActionBoxFightPokemon/TypeBox/type/maxPP
-@onready var moveCurPP = %ActionBoxFightPokemon/TypeBox/type/curPP
+@onready var moveMaxPPLabel = %ActionBoxFightPokemon/TypeBox/type/maxPP
+@onready var moveCurPPLabel = %ActionBoxFightPokemon/TypeBox/type/curPP
 @onready var movesGroup = %ActionBoxFightPokemon/moves
 @onready var moveOneText = %ActionBoxFightPokemon/moves/move1
 @onready var moveTwoText = %ActionBoxFightPokemon/moves/move2
@@ -19,9 +20,88 @@ extends Node2D
 @onready var moveFourText = %ActionBoxFightPokemon/moves/move4
 @onready var infoLord = %infoLord
 var actionTextures = ["res://Assets/images/ui/actionBoxFightPokemon.png", "res://Assets/images/ui/moveBox.png"]
+var canClick = true
 var maxHp : int
 var curHp : int
-var level = randi_range(60, 84)
+var moveOnePPUsed : int
+var moveTwoPPUsed : int
+var moveThreePPUsed : int
+var moveFourPPUsed : int
+var level = randi_range(1, 100)
+var party = {
+	"0" : {
+		"NUM" : 0,
+		"MAXHP": 1,
+		"CURHP": 1,
+		"ATTACK" : 1,
+		"DEFENSE" : 1,
+		"SPECIAL" : 1,
+		"SPEED" : 1,
+		"LEVEL" : 1,
+		"STATUS" : 0,
+		"ALIVE" : true
+	},
+	"1" : {
+		"NUM" : 1,
+		"MAXHP": 1,
+		"CURHP": 1,
+		"ATTACK" : 1,
+		"DEFENSE" : 1,
+		"SPECIAL" : 1,
+		"SPEED" : 1,
+		"LEVEL" : 1,
+		"STATUS" : 0,
+		"ALIVE" : true
+	},
+	"2" : {
+		"NUM" : 2,
+		"MAXHP": 1,
+		"CURHP": 1,
+		"ATTACK" : 1,
+		"DEFENSE" : 1,
+		"SPECIAL" : 1,
+		"SPEED" : 1,
+		"LEVEL" : 1,
+		"STATUS" : 0,
+		"ALIVE" : true
+	},
+	"3" : {
+		"NUM" : 3,
+		"MAXHP": 1,
+		"CURHP": 1,
+		"ATTACK" : 1,
+		"DEFENSE" : 1,
+		"SPECIAL" : 1,
+		"SPEED" : 1,
+		"LEVEL" : 1,
+		"STATUS" : 0,
+		"ALIVE" : true
+	},
+	"4" : {
+		"NUM" : 4,
+		"MAXHP": 1,
+		"CURHP": 1,
+		"ATTACK" : 1,
+		"DEFENSE" : 1,
+		"SPECIAL" : 1,
+		"SPEED" : 1,
+		"LEVEL" : 1,
+		"STATUS" : 0,
+		"ALIVE" : true
+	},
+	"5" : {
+		"NUM" : 5,
+		"MAXHP": 1,
+		"CURHP": 1,
+		"ATTACK" : 1,
+		"DEFENSE" : 1,
+		"SPECIAL" : 1,
+		"SPEED" : 1,
+		"LEVEL" : 1,
+		"STATUS" : 0,
+		"ALIVE" : true
+	},
+}
 
 var curSelected = 0
 var fightState = "main"
@@ -54,15 +134,34 @@ func _process(delta: float) -> void:
 			setCursorPos(0)
 		if Input.is_action_just_pressed("ui_right"):
 			setCursorPos(1)
-		if Input.is_action_just_pressed("confirm") and curSelected == 0:
+		if Input.is_action_just_pressed("confirm") and curSelected == 0 and canClick:
 			setCursorPos(2)
 			fightState = "move"
+			canClick = false
+			uiCoolDown.start(0.2)
+		elif Input.is_action_just_pressed("confirm") and curSelected == 1 and canClick:
+			setCursorPos(6)
+			fightState = "party"
+			canClick = false
+			uiCoolDown.start(0.2)
 	
 	if fightState == "move":
+		moveTypeLabel.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["TYPE"])
+		moveMaxPPLabel.set_text(str(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"]))
 		movesGroup.visible = true
 		typeBox.visible = true
 		actionBox.offset.x = -16.5
 		actionBox.texture = load(actionTextures[1])
+		
+		if curSelected == 2:
+			moveCurPPLabel.set_text(str(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"] - moveOnePPUsed))
+		if curSelected == 3:
+			moveCurPPLabel.set_text(str(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"] - moveTwoPPUsed))
+		if curSelected == 4:
+			moveCurPPLabel.set_text(str(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"] - moveThreePPUsed))
+		if curSelected == 5:
+			moveCurPPLabel.set_text(str(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"] - moveFourPPUsed))
+		
 		
 		if Input.is_action_just_pressed("ui_down"):
 			if curSelected < 5:
@@ -77,31 +176,53 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("back"):
 			setCursorPos(0)
 			fightState = "main"
-	
+			canClick = false
+			uiCoolDown.start()
+		
+		if Input.is_action_just_pressed("confirm") and canClick:
+			if curSelected == 2 and moveOnePPUsed < infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"]:
+				moveOnePPUsed += 1
+			elif curSelected == 3 and moveTwoPPUsed < infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"]:
+				moveTwoPPUsed += 1
+			elif curSelected == 4 and moveThreePPUsed < infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"]:
+				moveThreePPUsed += 1
+			elif curSelected == 5 and moveFourPPUsed < infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"]:
+				moveFourPPUsed += 1
+			
 	if Input.is_action_pressed("debug"):
 		curHp -= 1
+		
 func initializePokemon():
 	#pokemonSprite.frame = randi_range(0, 5)
-	pokemonSprite.frame = 0
+	pokemonSprite.frame = party["0"]["NUM"]
 	nameText.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["name"])
-	maxHp = ((((((infoLord.pokemon[str(pokemonSprite.frame)]["HP"]) + 15) * 2) + (pow(252, 1) / 4)) * level) / 100) + level + 10
-	curHp = randi_range(1, maxHp)
-	moveOneText.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"]["ONE"]["NAME"])
+	maxHp = ((((((infoLord.pokemon[str(pokemonSprite.frame)]["HP"]) + 15) * 2) + (252 / 4)) * level) / 100) + level + 10
+	curHp = maxHp
+	moveOneText.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"]["1"]["NAME"])
+	moveTwoText.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"]["2"]["NAME"])
+	moveThreeText.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"]["3"]["NAME"])
+	moveFourText.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"]["4"]["NAME"])
 	
 func setCursorPos(pos): # Use to set cursor position instead of directly
 	# Used for the inital action screen 0 = Fight 1 = party/pkmn
 	if pos == 0:
-		cursor.position = Vector2(-33, 86)
+		cursor.position = Vector2(76.5, 116.5)
 	elif pos == 1:
-		cursor.position = Vector2(14, 86)
+		cursor.position = Vector2(123.5, 116.5)
 	# Used for the moves 2-5 top to bottom
 	elif pos == 2:
-		cursor.position = Vector2(-65, 78)
+		cursor.position = Vector2(43.5, 108)
 	elif pos == 3:
-		cursor.position = Vector2(-65, 86)
+		cursor.position = Vector2(43.5, 116)
 	elif pos == 4:
-		cursor.position = Vector2(-65, 94)
+		cursor.position = Vector2(43.5, 124)
 	elif pos == 5:
-		cursor.position = Vector2(-65, 102)
+		cursor.position = Vector2(43.5, 132)
+	# Used for the party/pkmn screen
+	elif pos == 6:
+		cursor.position = Vector2(4, 12)
 		
 	curSelected = pos
+
+func _on_ui_timer_timeout() -> void:
+	canClick = true

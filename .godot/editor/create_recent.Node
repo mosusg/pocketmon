@@ -1,5 +1,6 @@
-Label
 Node2D
+Timer
+Label
 ProgressBar
 Control
 CanvasLayer
