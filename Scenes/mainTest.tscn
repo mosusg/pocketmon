@@ -1,4 +1,4 @@
-[gd_scene load_steps=342 format=3 uid="uid://dao1vlcb3ohwp"]
+[gd_scene load_steps=365 format=3 uid="uid://dao1vlcb3ohwp"]
 
 [ext_resource type="Script" path="res://Scripts/globalScript.gd" id="1_2lohr"]
 [ext_resource type="Texture2D" uid="uid://dx8kmq22dylbw" path="res://Assets/images/ui/placeholder party screen.png" id="2_gpmw5"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bet03u78ik6uu" path="res://Assets/images/ui/selector.png" id="15_nd7ub"]
 [ext_resource type="Texture2D" uid="uid://dfskqfgv28q7n" path="res://Assets/images/ui/moveBox.png" id="15_xc3dt"]
 [ext_resource type="Texture2D" uid="uid://dnnkdgijab054" path="res://Assets/images/ui/typeBox.png" id="16_b6jfb"]
+[ext_resource type="Texture2D" uid="uid://ct7d61e1b540k" path="res://Assets/images/ui/menuMons.png" id="17_64c81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cufhy"]
 atlas = ExtResource("4_0fnam")
@@ -2270,6 +2271,208 @@ font_color = Color(0, 0, 0, 1)
 font_size = 24
 font_color = Color(0, 0, 0, 0.980392)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_esyjj"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 154, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c15rk"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 35, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88awt"]
+atlas = ExtResource("17_64c81")
+region = Rect2(18, 35, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7ykm"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 103, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te820"]
+atlas = ExtResource("17_64c81")
+region = Rect2(18, 103, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v2bh"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 69, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe7yw"]
+atlas = ExtResource("17_64c81")
+region = Rect2(18, 69, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v1dn"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 137, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wjnb"]
+atlas = ExtResource("17_64c81")
+region = Rect2(18, 137, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d8hu"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_augth"]
+atlas = ExtResource("17_64c81")
+region = Rect2(18, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkloa"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 86, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6efsn"]
+atlas = ExtResource("17_64c81")
+region = Rect2(18, 86, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cx53"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 18, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf6lt"]
+atlas = ExtResource("17_64c81")
+region = Rect2(18, 18, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8jnk"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 171, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_804m7"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 120, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cdw5"]
+atlas = ExtResource("17_64c81")
+region = Rect2(18, 120, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3v6p"]
+atlas = ExtResource("17_64c81")
+region = Rect2(1, 52, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geftx"]
+atlas = ExtResource("17_64c81")
+region = Rect2(18, 52, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba74y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esyjj")
+}],
+"loop": true,
+"name": &"ball",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c15rk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88awt")
+}],
+"loop": true,
+"name": &"bird",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7ykm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_te820")
+}],
+"loop": true,
+"name": &"bug",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v2bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe7yw")
+}],
+"loop": true,
+"name": &"clefairy",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v1dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wjnb")
+}],
+"loop": true,
+"name": &"cow",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d8hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_augth")
+}],
+"loop": true,
+"name": &"pikachu",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkloa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6efsn")
+}],
+"loop": true,
+"name": &"plant",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cx53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf6lt")
+}],
+"loop": true,
+"name": &"rhydon",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8jnk")
+}],
+"loop": true,
+"name": &"shell",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_804m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cdw5")
+}],
+"loop": true,
+"name": &"snake",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3v6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geftx")
+}],
+"loop": true,
+"name": &"water",
+"speed": 10.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2rrq3"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
 [node name="Main" type="Node2D"]
 
 [node name="infoLord" type="Node2D" parent="."]
@@ -2283,13 +2486,13 @@ color = Color(0.972549, 0.972549, 0.972549, 1)
 metadata/_edit_lock_ = true
 
 [node name="PlaceholderFight" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.317647)
 position = Vector2(80, 72)
 texture = ExtResource("2_gpmw5")
 metadata/_edit_lock_ = true
 
 [node name="BattleScreen" type="Node2D" parent="."]
-visible = false
 
 [node name="EnemyUI" type="Node2D" parent="BattleScreen"]
 position = Vector2(56, 20)
@@ -2540,6 +2743,198 @@ position = Vector2(4, 12)
 texture = ExtResource("15_nd7ub")
 
 [node name="PartyScreen" type="Node2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(44, 83.01)
+
+[node name="partyMonIcon1" type="AnimatedSprite2D" parent="PartyScreen"]
+position = Vector2(-28, -59.01)
+sprite_frames = SubResource("SpriteFrames_ba74y")
+animation = &"bird"
+autoplay = "bird"
+frame_progress = 0.641118
+
+[node name="healthBarREAL" type="ProgressBar" parent="PartyScreen/partyMonIcon1"]
+offset_left = 32.0
+offset_top = -13.0
+offset_right = 80.0
+offset_bottom = 10.0
+scale = Vector2(1, 0.105)
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_v0i68")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nhsvv")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="name" type="Label" parent="PartyScreen/partyMonIcon1"]
+offset_left = 8.0
+offset_top = -25.0
+offset_right = 145.0
+offset_bottom = 2.0
+scale = Vector2(0.33, 0.33)
+text = "CHARMANDER"
+label_settings = SubResource("LabelSettings_2rrq3")
+
+[node name="level" type="Label" parent="PartyScreen/partyMonIcon1"]
+offset_left = 96.0
+offset_top = -25.0
+offset_right = 121.0
+offset_bottom = -16.0
+text = "5"
+label_settings = SubResource("LabelSettings_kboq4")
+vertical_alignment = 1
+
+[node name="LevelIcon" type="Sprite2D" parent="PartyScreen/partyMonIcon1/level"]
+position = Vector2(-4, 5)
+texture = ExtResource("7_4wyfy")
+
+[node name="HealthBar" type="Sprite2D" parent="PartyScreen/partyMonIcon1"]
+position = Vector2(56, -12)
+texture = ExtResource("2_miuci")
+
+[node name="Hp" type="Sprite2D" parent="PartyScreen/partyMonIcon1/HealthBar"]
+position = Vector2(-33, 0)
+texture = ExtResource("5_w0c73")
+
+[node name="maxHealth" type="Label" parent="PartyScreen/partyMonIcon1/HealthBar"]
+offset_left = 62.0
+offset_top = -5.0
+offset_right = 141.0
+offset_bottom = 22.0
+scale = Vector2(0.33, 0.33)
+text = "24"
+label_settings = SubResource("LabelSettings_kfc05")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="healthCount" type="Label" parent="PartyScreen/partyMonIcon1/HealthBar"]
+offset_left = 24.0
+offset_top = -4.0
+offset_right = 131.0
+offset_bottom = 23.0
+scale = Vector2(0.3, 0.3)
+text = "24"
+label_settings = SubResource("LabelSettings_kfc05")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="literallyTheSlash" type="Label" parent="PartyScreen/partyMonIcon1/HealthBar"]
+offset_left = 49.0
+offset_top = -13.0
+offset_right = 73.0
+offset_bottom = 14.0
+text = "/"
+label_settings = SubResource("LabelSettings_tht67")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="partyMonIcon2" type="AnimatedSprite2D" parent="PartyScreen"]
+position = Vector2(-28, -75.01)
+sprite_frames = SubResource("SpriteFrames_ba74y")
+animation = &"rhydon"
+autoplay = "rhydon"
+frame = 1
+frame_progress = 0.781172
+
+[node name="healthBarREAL" type="ProgressBar" parent="PartyScreen/partyMonIcon2"]
+offset_left = 32.0
+offset_top = 19.0
+offset_right = 80.0
+offset_bottom = 42.0
+scale = Vector2(1, 0.105)
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_v0i68")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nhsvv")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="name" type="Label" parent="PartyScreen/partyMonIcon2"]
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 251.0
+offset_bottom = 34.0
+scale = Vector2(0.33, 0.33)
+text = "PIDGEY"
+label_settings = SubResource("LabelSettings_2rrq3")
+
+[node name="level" type="Label" parent="PartyScreen/partyMonIcon2"]
+offset_left = 96.0
+offset_top = 7.0
+offset_right = 121.0
+offset_bottom = 16.0
+text = "5"
+label_settings = SubResource("LabelSettings_kboq4")
+vertical_alignment = 1
+
+[node name="LevelIcon" type="Sprite2D" parent="PartyScreen/partyMonIcon2/level"]
+position = Vector2(-4, 5)
+texture = ExtResource("7_4wyfy")
+
+[node name="HealthBar" type="Sprite2D" parent="PartyScreen/partyMonIcon2"]
+position = Vector2(56, 20)
+texture = ExtResource("2_miuci")
+
+[node name="Hp" type="Sprite2D" parent="PartyScreen/partyMonIcon2/HealthBar"]
+position = Vector2(-33, 0)
+texture = ExtResource("5_w0c73")
+
+[node name="maxHealth" type="Label" parent="PartyScreen/partyMonIcon2/HealthBar"]
+offset_left = 62.0
+offset_top = -5.0
+offset_right = 141.0
+offset_bottom = 22.0
+scale = Vector2(0.33, 0.33)
+text = "24"
+label_settings = SubResource("LabelSettings_kfc05")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="healthCount" type="Label" parent="PartyScreen/partyMonIcon2/HealthBar"]
+offset_left = 24.0
+offset_top = -4.0
+offset_right = 131.0
+offset_bottom = 23.0
+scale = Vector2(0.3, 0.3)
+text = "24"
+label_settings = SubResource("LabelSettings_kfc05")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="literallyTheSlash" type="Label" parent="PartyScreen/partyMonIcon2/HealthBar"]
+offset_left = 49.0
+offset_top = -13.0
+offset_right = 73.0
+offset_bottom = 14.0
+text = "/"
+label_settings = SubResource("LabelSettings_tht67")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="partyMonIcon3" type="AnimatedSprite2D" parent="PartyScreen"]
+position = Vector2(-84, -177.03)
+sprite_frames = SubResource("SpriteFrames_ba74y")
+animation = &"bird"
+frame_progress = 0.641118
+
+[node name="partyMonIcon4" type="AnimatedSprite2D" parent="PartyScreen"]
+position = Vector2(-112, -236.04)
+sprite_frames = SubResource("SpriteFrames_ba74y")
+animation = &"bird"
+frame_progress = 0.641118
+
+[node name="partyMonIcon5" type="AnimatedSprite2D" parent="PartyScreen"]
+position = Vector2(-140, -295.05)
+sprite_frames = SubResource("SpriteFrames_ba74y")
+animation = &"bird"
+frame_progress = 0.641118
+
+[node name="partyMonIcon6" type="AnimatedSprite2D" parent="PartyScreen"]
+position = Vector2(-168, -354.06)
+sprite_frames = SubResource("SpriteFrames_ba74y")
+animation = &"bird"
+frame_progress = 0.641118
 
 [connection signal="timeout" from="BattleScreen/PlayerUI/uiTimer" to="BattleScreen/PlayerUI" method="_on_ui_timer_timeout"]

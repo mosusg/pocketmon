@@ -1,10 +1,10 @@
+Label
+AnimatedSprite2D
 Node2D
 Timer
-Label
 ProgressBar
 Control
 CanvasLayer
 TextureProgressBar
 ColorRect
-AnimatedSprite2D
 Camera2D

@@ -18,6 +18,8 @@ extends Node2D
 @onready var moveTwoText = %ActionBoxFightPokemon/moves/move2
 @onready var moveThreeText = %ActionBoxFightPokemon/moves/move3
 @onready var moveFourText = %ActionBoxFightPokemon/moves/move4
+@onready var pkmnScreen = %PartyScreen
+
 @onready var infoLord = %infoLord
 var actionTextures = ["res://Assets/images/ui/actionBoxFightPokemon.png", "res://Assets/images/ui/moveBox.png"]
 var canClick = true
@@ -111,6 +113,8 @@ func _ready() -> void:
 	
 	setCursorPos(0)
 	
+	pkmnScreen.visible = false
+	
 	movesGroup.visible = false
 	typeBox.visible = false
 	actionBox.offset.x = 0
@@ -125,6 +129,7 @@ func _process(delta: float) -> void:
 	healthBar.value = float(curHp)/float(maxHp) * 100
 	
 	if fightState == "main":
+		pkmnScreen.visible = false
 		movesGroup.visible = false
 		actionBox.offset.x = 0
 		actionBox.texture = load(actionTextures[0])
@@ -144,8 +149,10 @@ func _process(delta: float) -> void:
 			fightState = "party"
 			canClick = false
 			uiCoolDown.start(0.2)
+			pkmnScreen.visible = true
 	
 	if fightState == "move":
+		pkmnScreen.visible = false
 		moveTypeLabel.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["TYPE"])
 		moveMaxPPLabel.set_text(str(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"]))
 		movesGroup.visible = true
@@ -189,6 +196,15 @@ func _process(delta: float) -> void:
 			elif curSelected == 5 and moveFourPPUsed < infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"]:
 				moveFourPPUsed += 1
 			
+	if fightState == "party":
+		pkmnScreen.visible = false
+		
+		if Input.is_action_just_pressed("back"):
+			setCursorPos(0)
+			fightState = "main"
+			canClick = false
+			uiCoolDown.start()
+	
 	if Input.is_action_pressed("debug"):
 		curHp -= 1
 		
