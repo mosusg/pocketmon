@@ -2493,6 +2493,8 @@ texture = ExtResource("2_gpmw5")
 metadata/_edit_lock_ = true
 
 [node name="BattleScreen" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
 
 [node name="EnemyUI" type="Node2D" parent="BattleScreen"]
 position = Vector2(56, 20)

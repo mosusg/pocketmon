@@ -8,6 +8,7 @@ extends Node2D
 @onready var healthBar = $BottomFrameThing/healthBarREAL
 @onready var cursor = $"../../Selector"
 @onready var uiCoolDown = $uiTimer
+@onready var battleScreenContainer = %BattleScreen
 @onready var actionBox = %ActionBoxFightPokemon
 @onready var typeBox = %ActionBoxFightPokemon/TypeBox
 @onready var moveTypeLabel = %ActionBoxFightPokemon/TypeBox/type
@@ -129,6 +130,7 @@ func _process(delta: float) -> void:
 	healthBar.value = float(curHp)/float(maxHp) * 100
 	
 	if fightState == "main":
+		battleScreenContainer.visible = true
 		pkmnScreen.visible = false
 		movesGroup.visible = false
 		actionBox.offset.x = 0
@@ -152,6 +154,7 @@ func _process(delta: float) -> void:
 			pkmnScreen.visible = true
 	
 	if fightState == "move":
+		battleScreenContainer.visible = true
 		pkmnScreen.visible = false
 		moveTypeLabel.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["TYPE"])
 		moveMaxPPLabel.set_text(str(infoLord.pokemon[str(pokemonSprite.frame)]["MOVESETONE"][str(curSelected - 1)]["PP"]))
@@ -197,7 +200,8 @@ func _process(delta: float) -> void:
 				moveFourPPUsed += 1
 			
 	if fightState == "party":
-		pkmnScreen.visible = false
+		battleScreenContainer.visible = false
+		pkmnScreen.visible = true
 		
 		if Input.is_action_just_pressed("back"):
 			setCursorPos(0)
