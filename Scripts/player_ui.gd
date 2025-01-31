@@ -21,9 +21,10 @@ extends Node2D
 @onready var moveFourText = %ActionBoxFightPokemon/moves/move4
 
 @onready var pkmn1Name = %PartyScreen/partyMonIcon1/name
-@onready var pkmn1MaxHP = %PartyScreen/partyMonIcon1/HealthBar/maxHealth
-@onready var pkmn1CurHP = %PartyScreen/partyMonIcon1/HealthBar/healthCount
-@onready var pkmn1Icon = %PartyScreen/partyMonIcon1
+@onready var pkmn1MaxHPTEXT = %PartyScreen/partyMonIcon1/HealthBar/maxHealth
+var pkmn1MaxHPVALUE = 1
+@onready var pkmn1CurHPTEXT = %PartyScreen/partyMonIcon1/HealthBar/healthCount
+@onready var pkmn1IconTEXT = %PartyScreen/partyMonIcon1
 
 
 @onready var pkmnScreen = %PartyScreen
@@ -129,8 +130,12 @@ func _ready() -> void:
 	actionBox.position = Vector2(112, 120)
 	actionBox.texture = load(actionTextures[0])
 	
+	pkmn1MaxHPVALUE = maxHp
+	
 	levelText.set_text(str(level))
 	maxHealthText.set_text(str(maxHp))
+	
+	pkmn1MaxHPTEXT.set_text(str(pkmn1MaxHPVALUE))
 
 func _process(delta: float) -> void:
 	curHealthText.set_text(str(curHp))
