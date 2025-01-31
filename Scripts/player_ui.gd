@@ -19,6 +19,13 @@ extends Node2D
 @onready var moveTwoText = %ActionBoxFightPokemon/moves/move2
 @onready var moveThreeText = %ActionBoxFightPokemon/moves/move3
 @onready var moveFourText = %ActionBoxFightPokemon/moves/move4
+
+@onready var pkmn1Name = %PartyScreen/partyMonIcon1/name
+@onready var pkmn1MaxHP = %PartyScreen/partyMonIcon1/HealthBar/maxHealth
+@onready var pkmn1CurHP = %PartyScreen/partyMonIcon1/HealthBar/healthCount
+@onready var pkmn1Icon = %PartyScreen/partyMonIcon1
+
+
 @onready var pkmnScreen = %PartyScreen
 
 @onready var infoLord = %infoLord
@@ -200,6 +207,8 @@ func _process(delta: float) -> void:
 				moveFourPPUsed += 1
 			
 	if fightState == "party":
+		pkmn1Name.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["name"])
+		
 		battleScreenContainer.visible = false
 		pkmnScreen.visible = true
 		
@@ -214,6 +223,8 @@ func _process(delta: float) -> void:
 		
 func initializePokemon():
 	#pokemonSprite.frame = randi_range(0, 5)
+	for pokemon in party.size():
+		pass
 	pokemonSprite.frame = party["0"]["NUM"]
 	nameText.set_text(infoLord.pokemon[str(pokemonSprite.frame)]["name"])
 	maxHp = ((((((infoLord.pokemon[str(pokemonSprite.frame)]["HP"]) + 15) * 2) + (252 / 4)) * level) / 100) + level + 10
