@@ -130,12 +130,13 @@ func _ready() -> void:
 	actionBox.position = Vector2(112, 120)
 	actionBox.texture = load(actionTextures[0])
 	
-	pkmn1MaxHPVALUE = maxHp
+	party["0"]["CURHP"] = curHp
+	party["0"]["MAXHP"] = maxHp
 	
 	levelText.set_text(str(level))
-	maxHealthText.set_text(str(maxHp))
-	
-	pkmn1MaxHPTEXT.set_text(str(pkmn1MaxHPVALUE))
+	maxHealthText.set_text(str(maxHp))	
+	pkmn1MaxHPTEXT.set_text(str(party["0"]["MAXHP"]))
+	pkmn1CurHPTEXT.set_text(str(party["0"]["CURHP"]))
 
 func _process(delta: float) -> void:
 	curHealthText.set_text(str(curHp))
