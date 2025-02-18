@@ -69,7 +69,7 @@ var pokemon = {
 			"1" : moves["RAZOR LEAF"],
 			"2" : moves["SLEEP POWDER"],
 			"3" : moves["BODY SLAM"],
-			"4" : moves["DIDDLER BLAST"]
+			"4" : moves["SWORDS DANCE"]
 			}
 		},
 	"1" : {

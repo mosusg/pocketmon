@@ -1,14 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1738350200
+::res://::1739910144
 gitignore.txt::TextFile::-1::1738265290::0::1::::<><>::
 icon.svg::CompressedTexture2D::6802672378318270978::1738093751::1738350201::1::::<><>::
 ::res://Assets/::1738097113
-::res://Assets/fonts/::1738265414
+::res://Assets/fonts/::1738350201
 PKMN RBYGSC.ttf::FontFile::3023493948922890944::1379949808::1738350201::1::::<><>::
-::res://Assets/images/::1738265414
+::res://Assets/images/::1738350201
 pokemonfront.png::CompressedTexture2D::3839508346541786072::1738265290::1738350201::1::::<><>::
 pokemonsback.png::CompressedTexture2D::8536840666698235126::1738265290::1738350201::1::::<><>::
-::res://Assets/images/ui/::1738265414
+::res://Assets/images/ui/::1738350201
 actionBox.png::CompressedTexture2D::5258245156751577452::1738265290::1738350201::1::::<><>::
 actionBoxFightPokemon.png::CompressedTexture2D::4354324539607985378::1738265290::1738350201::1::::<><>::
 bottomFrameThing.png::CompressedTexture2D::441680398606542484::1738097223::1738350201::1::::<><>::
@@ -30,10 +30,10 @@ pokeballDead.png::CompressedTexture2D::5230373786642030837::1738265290::17383502
 pokeballEmptyl.png::CompressedTexture2D::1935413461019062178::1738265290::1738350201::1::::<><>::
 selector.png::CompressedTexture2D::2707968264032098472::1738265290::1738350201::1::::<><>::
 typeBox.png::CompressedTexture2D::8099166784393404837::1738265290::1738350201::1::::<><>::
-::res://Scenes/::1738269986
-mainTest.tscn::PackedScene::7189780064049943271::1738269986::0::1::::<><>::res://Scripts/globalScript.gd<>uid://dx8kmq22dylbw::::res://Assets/images/ui/placeholder party screen.png<>uid://d113q0st3apq7::::res://Assets/images/ui/healthBar.png<>uid://gj7n835k03ho::::res://Assets/images/ui/bottomFrameThing.png<>res://Scripts/enemy_ui.gd<>uid://bux5e2t3ybg45::::res://Assets/images/pokemonfront.png<>uid://clnk4omol3mvb::::res://Assets/images/ui/hp.png<>uid://bjcurefr3k14o::::res://Assets/fonts/PKMN RBYGSC.ttf<>uid://4dahr5ie2san::::res://Assets/images/ui/levelIcon.png<>uid://dtvkrvonvrf8i::::res://Assets/images/pokemonsback.png<>uid://djcafgtb48fmj::::res://Assets/images/ui/fightBoxEmpty.png<>res://Scripts/player_ui.gd<>uid://cp7cfjwyuad3m::::res://Assets/images/ui/playerBottomFrameThing.png<>uid://bet03u78ik6uu::::res://Assets/images/ui/selector.png<>uid://dfskqfgv28q7n::::res://Assets/images/ui/moveBox.png<>uid://dnnkdgijab054::::res://Assets/images/ui/typeBox.png<>uid://ct7d61e1b540k::::res://Assets/images/ui/menuMons.png
-::res://Scripts/::1738349944
+::res://Scenes/::1738350995
+mainTest.tscn::PackedScene::7189780064049943271::1738350995::0::1::::<><>::res://Scripts/globalScript.gd<>uid://dx8kmq22dylbw::::res://Assets/images/ui/placeholder party screen.png<>uid://d113q0st3apq7::::res://Assets/images/ui/healthBar.png<>uid://gj7n835k03ho::::res://Assets/images/ui/bottomFrameThing.png<>res://Scripts/enemy_ui.gd<>uid://bux5e2t3ybg45::::res://Assets/images/pokemonfront.png<>uid://clnk4omol3mvb::::res://Assets/images/ui/hp.png<>uid://bjcurefr3k14o::::res://Assets/fonts/PKMN RBYGSC.ttf<>uid://4dahr5ie2san::::res://Assets/images/ui/levelIcon.png<>uid://dtvkrvonvrf8i::::res://Assets/images/pokemonsback.png<>uid://djcafgtb48fmj::::res://Assets/images/ui/fightBoxEmpty.png<>res://Scripts/player_ui.gd<>uid://cp7cfjwyuad3m::::res://Assets/images/ui/playerBottomFrameThing.png<>uid://bet03u78ik6uu::::res://Assets/images/ui/selector.png<>uid://dfskqfgv28q7n::::res://Assets/images/ui/moveBox.png<>uid://dnnkdgijab054::::res://Assets/images/ui/typeBox.png<>uid://ct7d61e1b540k::::res://Assets/images/ui/menuMons.png
+::res://Scripts/::1738350994
 enemypokemon.gd::GDScript::-1::1738265290::0::1::::<>Sprite2D<>::
 enemy_ui.gd::GDScript::-1::1738265290::0::1::::<>Node2D<>::
 globalScript.gd::GDScript::-1::1738265565::0::1::::<>Node<>::
-player_ui.gd::GDScript::-1::1738349944::0::1::::<>Node2D<>::
+player_ui.gd::GDScript::-1::1738350994::0::1::::<>Node2D<>::

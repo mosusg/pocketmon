@@ -38,7 +38,8 @@ var moveOnePPUsed : int
 var moveTwoPPUsed : int
 var moveThreePPUsed : int
 var moveFourPPUsed : int
-var level = randi_range(1, 100)
+var level : int
+var randomLevel = randi_range(1, 100)
 var party = {
 	"0" : {
 		"NUM" : 0,
@@ -118,6 +119,7 @@ var curSelected = 0
 var fightState = "main"
 
 func _ready() -> void:
+	level = randomLevel
 	initializePokemon()
 	
 	setCursorPos(0)
