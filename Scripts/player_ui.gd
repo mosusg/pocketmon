@@ -31,6 +31,8 @@ var pkmn1MaxHPVALUE = 1
 
 @onready var infoLord = %infoLord
 var actionTextures = ["res://Assets/images/ui/actionBoxFightPokemon.png", "res://Assets/images/ui/moveBox.png"]
+var turnNum = 0
+var turn = 0 # 0 for player, 1 for ai
 var canClick = true
 var maxHp : int
 var curHp : int
